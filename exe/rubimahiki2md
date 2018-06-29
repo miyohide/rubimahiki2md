@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+require 'rubimahiki2md'
+
+case ARGV.size
+when 1
+  text = File.read(ARGV[0])
+else
+  usage
+end
+
+puts Rubimahiki2md::RubimaHiki.to_md(ARGV[0], text)
